@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -460,5 +460,301 @@ footer span {
 
   .priority {
     display: none;
+  }
+}
+
+
+/* Кнопка добавления задачи */
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.add-task-button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  background: #6956d9;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-task-button:hover {
+  background: #5743c5;
+  transform: translateY(-1px);
+}
+
+/* Затемнение фона */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 20, 35, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+/* Окно создания задачи */
+.task-modal {
+  width: 100%;
+  max-width: 460px;
+  padding: 28px;
+  border-radius: 18px;
+  background: #fff;
+  color: #252238;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: modalAppear 0.2s ease;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  margin: 8px 0 0;
+  font-size: 24px;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #777;
+}
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-modal label {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.task-modal input,
+.task-modal select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #dedee8;
+  border-radius: 9px;
+  background: #fff;
+  color: #222;
+  font: inherit;
+  outline: none;
+}
+
+.task-modal input:focus,
+.task-modal select:focus {
+  border-color: #6956d9;
+  box-shadow: 0 0 0 3px rgba(105, 86, 217, 0.12);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.modal-cancel,
+.modal-submit {
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-cancel {
+  border: 1px solid #dedee8;
+  background: #fff;
+  color: #444;
+}
+
+.modal-submit {
+  border: none;
+  background: #6956d9;
+  color: #fff;
+}
+
+.modal-submit:hover {
+  background: #5743c5;
+}
+
+@media (max-width: 600px) {
+  .task-modal {
+    padding: 20px;
+  }
+}
+
+/* Авторизация и регистрация */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #0c0d14;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 35px;
+  background: #151621;
+  border: 1px solid #272839;
+  border-radius: 18px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.auth-card h1 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.auth-description {
+  color: #999aaf;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form label {
+  color: #b6b7c7;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 13px 14px;
+  color: white;
+  background: #0c0d14;
+  border: 1px solid #303145;
+  border-radius: 9px;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: #9270ed;
+}
+
+.auth-submit {
+  margin-top: 12px;
+  padding: 14px;
+  color: white;
+  background: #7958df;
+  border: none;
+  border-radius: 9px;
+  font-weight: 600;
+}
+
+.auth-submit:hover {
+  background: #906ff5;
+}
+
+.auth-submit:disabled,
+.modal-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.auth-switch {
+  margin-top: 24px;
+  color: #999aaf;
+  text-align: center;
+  font-size: 12px;
+}
+
+.auth-switch button {
+  margin-left: 7px;
+  color: #b99bff;
+  background: none;
+  border: none;
+  font-weight: 600;
+}
+
+.error-message {
+  padding: 12px;
+  margin-bottom: 15px;
+  color: #ff9ba9;
+  background: #472d36;
+  border: 1px solid #75404c;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.app-error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-error button {
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.logout-button {
+  display: block;
+  margin-top: 7px;
+  padding: 0;
+  color: #b99bff;
+  background: none;
+  border: none;
+  font-size: 11px;
+}
+
+.priority.low {
+  background: #263b37;
+  color: #82d8b5;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px;
   }
 }
